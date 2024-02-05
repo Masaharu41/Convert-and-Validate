@@ -32,18 +32,20 @@ Module ConvertandValidate
             End If
 
         Loop
-
+        Console.Read()
     End Sub
     'make this work
 
 
-    Function ConversionValid(convertThisString, toThisInteger) As Boolean
+    Function ConversionValid(convertThisString$, toThisInteger As Integer) As Boolean
 
         Dim status As Boolean
 
         Try
-
+            toThisInteger = CInt(convertThisString)
+            status = True
         Catch ex As Exception
+            status = False
 
         End Try
 
